@@ -1,7 +1,7 @@
 import Button from './Button';
-import ErrorMessage from './ErrorMessage';
+import Message from './Message';
 import Header from './Header';
 import Input from './Input';
 import Txt from './Txt';
 
-export { Button, ErrorMessage, Header, Input, Txt };
+export { Button, Message, Header, Input, Txt };

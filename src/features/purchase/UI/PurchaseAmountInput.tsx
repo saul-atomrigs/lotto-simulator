@@ -1,4 +1,4 @@
-import { Button, ErrorMessage, Header, Input } from '../../../components';
+import { Button, Message, Header, Input } from '../../../components';
 import usePurchaseAmount from '../hooks/usePurchaseAmount';
 import { CONSTANTS } from '../model/constants';
 
@@ -28,7 +28,7 @@ export default function PurchaseAmountInput({
           {CONSTANTS.BUTTON_LABEL}
         </Button>
       </div>
-      {error && <ErrorMessage message={error} />}
+      {error && <Message message={error} type='error' />}
     </div>
   );
 }

@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { CONSTANTS } from '../model/constants';
 
-export default function usePurchaseAmount() {
+export default function usePurchaseAmount(
+  onAmountConfirm: (amount: string) => void
+) {
   const [amount, setAmount] = useState('');
   const [error, setError] = useState('');
 
@@ -27,6 +29,7 @@ export default function usePurchaseAmount() {
     }
 
     setError('');
+    onAmountConfirm(amount);
   };
 
   return {

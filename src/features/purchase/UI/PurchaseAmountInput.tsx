@@ -2,8 +2,15 @@ import { Button, ErrorMessage, Header, Input } from '../../../components';
 import usePurchaseAmount from '../hooks/usePurchaseAmount';
 import { CONSTANTS } from '../model/constants';
 
-export default function PurchaseAmountInput() {
-  const { amount, error, handleChange, handleClick } = usePurchaseAmount();
+interface PurchaseAmountInputProps {
+  onAmountConfirm: (amount: string) => void;
+}
+
+export default function PurchaseAmountInput({
+  onAmountConfirm,
+}: PurchaseAmountInputProps) {
+  const { amount, error, handleChange, handleClick } =
+    usePurchaseAmount(onAmountConfirm);
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>

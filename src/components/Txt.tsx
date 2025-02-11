@@ -11,7 +11,7 @@ interface BaseProps {
 
 type TxtProps = BaseProps & React.HTMLAttributes<HTMLSpanElement>;
 
-export function Txt({
+export default function Txt({
   children,
   size,
   fontWeight,

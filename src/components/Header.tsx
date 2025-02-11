@@ -1,4 +1,4 @@
-import { Txt } from '../components/Txt';
+import Txt from '../components/Txt';
 import type { SizeValue, FontWeightValue } from '../components/Txt';
 
 interface HeaderProps {

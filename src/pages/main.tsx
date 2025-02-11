@@ -8,16 +8,7 @@ export default function Main() {
   const [drawAmount, setDrawAmount] = useState(0);
 
   return (
-    <div
-      style={{
-        padding: '36px 24px',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '12px',
-        width: '500px',
-        margin: '0 auto',
-      }}
-    >
+    <div className='main-container'>
       <Header size='large' fontWeight='bold'>
         {APPLICATION_NAME}
       </Header>

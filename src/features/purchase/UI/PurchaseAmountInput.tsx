@@ -1,34 +1,9 @@
-import { useState } from 'react';
 import { Button, ErrorMessage, Header, Input } from '../../../components';
+import usePurchaseAmount from '../hooks/usePurchaseAmount';
 import { CONSTANTS } from '../model/constants';
 
 export default function PurchaseAmountInput() {
-  const [amount, setAmount] = useState('');
-  const [error, setError] = useState('');
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setAmount(value);
-
-    if (!value) {
-      setError('');
-    }
-  };
-
-  const handleClick = () => {
-    if (!amount) {
-      setError(CONSTANTS.ERROR_MESSAGE_EMPTY);
-      return;
-    }
-
-    const numValue = +amount;
-    if (numValue % CONSTANTS.LOTTO_PRICE !== 0) {
-      setError(CONSTANTS.ERROR_MESSAGE);
-      return;
-    }
-
-    setError('');
-  };
+  const { amount, error, handleChange, handleClick } = usePurchaseAmount();
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>

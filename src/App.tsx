@@ -1,6 +1,6 @@
 import { APPLICATION_NAME } from './constants';
 import PurchaseAmountInput from './features/purchase/UI/PurchaseAmountInput';
-import Header from './widgets/Header';
+import Header from './components/Header';
 
 function App() {
   return (

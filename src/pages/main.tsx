@@ -32,15 +32,20 @@ export default function Main() {
         onAmountConfirm={(amount) => setDrawAmount(+amount / 1000)}
       />
 
-      {isDrawn && <DrawList draws={draws} />}
+      {isDrawn && (
+        <>
+          <DrawList draws={draws} />
+          <WinButton />
+        </>
+      )}
 
-      {isDrawn && <WinButton />}
-
-      {isWinningNumbers && <WinDisplay />}
-
-      {isWinningNumbers && <WinResults draws={draws} />}
-
-      {isWinningNumbers && <ResetButton onReset={handleReset} />}
+      {isWinningNumbers && (
+        <>
+          <WinDisplay />
+          <WinResults draws={draws} />
+          <ResetButton onReset={handleReset} />
+        </>
+      )}
     </div>
   );
 }

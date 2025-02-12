@@ -7,9 +7,11 @@ import WinButton from '../features/win-button';
 import WinDisplay from '../features/win-display';
 import { useWinStore } from '../store/winStore';
 import WinResults from '../features/win-results';
+import { useDraw } from '../features/draw/Draw.hooks';
 
 export default function Main() {
   const [drawAmount, setDrawAmount] = useState(0);
+  const { draws } = useDraw(drawAmount);
   const winningNumbers = useWinStore((state) => state.winningNumbers);
 
   return (
@@ -22,13 +24,13 @@ export default function Main() {
         onAmountConfirm={(amount) => setDrawAmount(+amount / 1000)}
       />
 
-      {drawAmount > 0 && <DrawList amount={drawAmount} />}
+      {drawAmount > 0 && <DrawList draws={draws} />}
 
       {drawAmount > 0 && <WinButton />}
 
       {winningNumbers.length > 0 && <WinDisplay />}
 
-      {winningNumbers.length > 0 && <WinResults />}
+      {winningNumbers.length > 0 && <WinResults draws={draws} />}
     </div>
   );
 }

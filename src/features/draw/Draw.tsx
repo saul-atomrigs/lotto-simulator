@@ -1,10 +1,7 @@
 import { Box, Txt } from '../../components';
 import { PURCHASED_DRAWS } from './Draw.constants';
-import { useDraw } from './Draw.hooks';
 
-export default function DrawList({ amount }: { amount: number }) {
-  const { draws } = useDraw(amount);
-
+export default function DrawList({ draws }: { draws: number[][] }) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
       <DrawHeader />

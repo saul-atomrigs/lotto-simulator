@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { APPLICATION_NAME } from '../constants';
-import PurchaseAmountInput from '../features/purchase/PurchaseAmountInput';
 import Header from '../components/Header';
-import { DrawList } from '../features/draw/UI/Draw';
+import PurchaseAmountInput from '../features/purchase/PurchaseAmountInput';
+import DrawList from '../features/draw/Draw';
 
 export default function Main() {
   const [drawAmount, setDrawAmount] = useState(0);

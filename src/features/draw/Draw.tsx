@@ -1,9 +1,8 @@
-import { Txt } from '../../../components';
-import Box from '../../../components/Box';
-import { useDraw } from '../hooks/useDraw';
-import { PURCHASED_DRAWS } from '../model/constants';
+import { Box, Txt } from '../../components';
+import { PURCHASED_DRAWS } from './Draw.constants';
+import { useDraw } from './Draw.hooks';
 
-const DrawList = ({ amount }: { amount: number }) => {
+export default function DrawList({ amount }: { amount: number }) {
   const { draws } = useDraw(amount);
 
   return (
@@ -14,7 +13,7 @@ const DrawList = ({ amount }: { amount: number }) => {
       ))}
     </div>
   );
-};
+}
 
 const DrawHeader = () => {
   return (
@@ -23,5 +22,3 @@ const DrawHeader = () => {
     </Txt>
   );
 };
-
-export { DrawList };

@@ -6,6 +6,7 @@ import DrawList from '../features/draw';
 import WinButton from '../features/win-button';
 import WinDisplay from '../features/win-display';
 import { useWinStore } from '../store/winStore';
+import WinResults from '../features/win-results';
 
 export default function Main() {
   const [drawAmount, setDrawAmount] = useState(0);
@@ -26,6 +27,8 @@ export default function Main() {
       {drawAmount > 0 && <WinButton />}
 
       {winningNumbers.length > 0 && <WinDisplay />}
+
+      {winningNumbers.length > 0 && <WinResults />}
     </div>
   );
 }

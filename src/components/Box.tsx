@@ -1,12 +1,15 @@
 interface BoxProps {
   children: React.ReactNode;
+  type?: 'primary' | 'winner';
 }
 
-export default function Box({ children }: BoxProps) {
+export default function Box({ children, type = 'primary' }: BoxProps) {
+  const backgroundColor = type === 'winner' ? '#ffd700' : '#f6f8fa';
+
   return (
     <div
       style={{
-        backgroundColor: '#f6f8fa',
+        backgroundColor,
         padding: '10px',
         borderRadius: '5px',
       }}

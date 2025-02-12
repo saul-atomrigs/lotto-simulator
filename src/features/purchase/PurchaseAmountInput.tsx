@@ -1,6 +1,6 @@
-import { Button, Message, Header, Input } from '../../../components';
-import usePurchaseAmount from '../hooks/usePurchaseAmount';
-import { CONSTANTS } from '../model/constants';
+import { Button, Message, Header, Input } from '../../components';
+import { CONSTANTS } from './PurchaseAmount.constants';
+import { usePurchaseAmount } from './PurchaseAmount.hooks';
 
 interface PurchaseAmountInputProps {
   onAmountConfirm: (amount: string) => void;

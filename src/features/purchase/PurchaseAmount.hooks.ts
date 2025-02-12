@@ -1,9 +1,7 @@
 import { useState } from 'react';
-import { CONSTANTS } from '../model/constants';
+import { CONSTANTS } from './PurchaseAmount.constants';
 
-export default function usePurchaseAmount(
-  onAmountConfirm: (amount: string) => void
-) {
+export function usePurchaseAmount(onAmountConfirm: (amount: string) => void) {
   const [amount, setAmount] = useState('');
   const [error, setError] = useState('');
 

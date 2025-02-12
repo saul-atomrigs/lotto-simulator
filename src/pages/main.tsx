@@ -19,6 +19,9 @@ export default function Main() {
     setDrawAmount(0);
   };
 
+  const isDrawn = drawAmount > 0;
+  const isWinningNumbers = winningNumbers.length > 0;
+
   return (
     <div className='main-container'>
       <Header size='large' fontWeight='bold'>
@@ -29,15 +32,15 @@ export default function Main() {
         onAmountConfirm={(amount) => setDrawAmount(+amount / 1000)}
       />
 
-      {drawAmount > 0 && <DrawList draws={draws} />}
+      {isDrawn && <DrawList draws={draws} />}
 
-      {drawAmount > 0 && <WinButton />}
+      {isDrawn && <WinButton />}
 
-      {winningNumbers.length > 0 && <WinDisplay />}
+      {isWinningNumbers && <WinDisplay />}
 
-      {winningNumbers.length > 0 && <WinResults draws={draws} />}
+      {isWinningNumbers && <WinResults draws={draws} />}
 
-      {winningNumbers.length > 0 && <ResetButton onReset={handleReset} />}
+      {isWinningNumbers && <ResetButton onReset={handleReset} />}
     </div>
   );
 }

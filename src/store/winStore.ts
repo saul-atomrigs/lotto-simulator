@@ -5,6 +5,7 @@ interface WinStore {
   winningNumbers: number[];
   setWinningNumbers: () => void;
   bonusNumber: number;
+  reset: () => void;
 }
 
 export const useWinStore = create<WinStore>((set) => ({
@@ -16,4 +17,5 @@ export const useWinStore = create<WinStore>((set) => ({
     set({ winningNumbers: numbers });
     set({ bonusNumber: bonus });
   },
+  reset: () => set({ winningNumbers: [] }),
 }));

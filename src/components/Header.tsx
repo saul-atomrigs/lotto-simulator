@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import Txt from '../components/Txt';
 import type { SizeValue, FontWeightValue } from '../components/Txt';
 
@@ -7,10 +8,12 @@ interface HeaderProps {
   fontWeight: FontWeightValue;
 }
 
-export default function Header({ children, size, fontWeight }: HeaderProps) {
+function Header({ children, size, fontWeight }: HeaderProps) {
   return (
     <Txt size={size} fontWeight={fontWeight}>
       {children}
     </Txt>
   );
 }
+
+export default memo(Header);

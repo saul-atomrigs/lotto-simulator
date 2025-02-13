@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { Button, Message, Header, Input } from '../../components';
 import { CONSTANTS } from './PurchaseAmount.constants';
 import { usePurchaseAmount } from './PurchaseAmount.hooks';
@@ -6,9 +7,7 @@ interface PurchaseAmountInputProps {
   onAmountConfirm: (amount: string) => void;
 }
 
-export default function PurchaseAmountInput({
-  onAmountConfirm,
-}: PurchaseAmountInputProps) {
+function PurchaseAmountInput({ onAmountConfirm }: PurchaseAmountInputProps) {
   const { amount, error, handleChange, handleClick } =
     usePurchaseAmount(onAmountConfirm);
 
@@ -32,3 +31,5 @@ export default function PurchaseAmountInput({
     </div>
   );
 }
+
+export default memo(PurchaseAmountInput);

@@ -1,3 +1,5 @@
+import { COLORS } from '../design-tokens';
+
 interface BoxProps {
   children: React.ReactNode;
   type?: 'primary' | 'winner';
@@ -5,7 +7,8 @@ interface BoxProps {
 }
 
 export default function Box({ children, type = 'primary', style }: BoxProps) {
-  const backgroundColor = type === 'winner' ? '#ffd700' : '#f6f8fa';
+  const isWinner = type === 'winner';
+  const backgroundColor = isWinner ? COLORS.GOLD : COLORS.GRAY;
 
   return (
     <div

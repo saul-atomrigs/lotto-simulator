@@ -1,3 +1,5 @@
+import { COLORS } from '../design-tokens';
+
 export interface InputProps {
   type: 'number' | 'text';
   value?: string | number;
@@ -13,7 +15,7 @@ export default function Input({ type, value, onChange, error }: InputProps) {
       onChange={onChange}
       style={{
         padding: '8px 16px',
-        border: `1px solid ${error ? 'red' : '#333'}`,
+        border: `1px solid ${error ? COLORS.RED : COLORS.GRAY}`,
         borderRadius: 4,
         width: '100%',
       }}

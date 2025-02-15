@@ -1,4 +1,5 @@
 import { ButtonHTMLAttributes } from 'react';
+import { COLORS } from '../design-tokens';
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   theme?: 'primary' | 'dark';
@@ -24,11 +25,11 @@ export default function Button(props: Props) {
       style={{
         padding: '8px 16px',
         backgroundColor: disabled
-          ? '#ccc'
+          ? COLORS.GRAY
           : theme === 'primary'
-            ? '#0070f3'
-            : '#333',
-        color: theme === 'primary' ? '#fff' : '#fff',
+            ? COLORS.MAIN
+            : COLORS.DARK,
+        color: COLORS.WHITE,
         border: 'none',
         borderRadius: 4,
         cursor: disabled ? 'not-allowed' : 'pointer',
